@@ -24,7 +24,7 @@ var PokedexSearchPanel = Panels.Panel.extend({
     if (fragment === "encounters") fragment = "encounters/";
     if (questionIndex >= 0) fragment = fragment.slice(0, questionIndex);
     var buf = '<div class="pfx-body"><form class="pokedex">';
-    buf += '<h1 class="unbound-title"><a href="' + DEXROOT + '" data-target="replace"><img src="images/pokemonunbound.png" alt="Pok&eacute;mon Unbound" width="348" height="92"></a></h1>';
+    buf += '<h1 class="unbound-title"><a href="' + DEXROOT + '" data-target="replace"><img src="images/pokemonunbound.png" alt="Pok&eacute;mon Unbound" width="300" height="79"></a></h1>';
     buf +=
       '<h4>Pok&eacute;mon Unbound 2.1.1.1 Pok&eacute;dex: stats, abilities, learnsets and wild encounters from the game&rsquo;s data</h4>';
     buf +=

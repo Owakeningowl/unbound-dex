@@ -1,5 +1,14 @@
 /* No top bar: the panels start at the top, the theme picker sits in the corner. */
 .pfx-panel { top: 0 !important; }
 .nav-theme.unbound-theme { position: fixed; top: 10px; right: 14px; z-index: 20; }
-.unbound-title { margin: 6px 0 4px; }
-.unbound-title img { max-width: 100%; height: auto; }
+.unbound-title { margin: 10px 0 2px; }
+/* the logo's own capsule edges fade into the page instead of sitting on it as a box */
+.unbound-title img {
+  width: 300px; max-width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+                      linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+              linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-composite: intersect;
+}
