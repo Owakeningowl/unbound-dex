@@ -56,7 +56,7 @@
       return;
     }
     lastPromptedSignature = signature;
-    if (window.confirm("A newer version of Nulldex is available. Refresh now?")) {
+    if (window.confirm("A newer version of the Unbound Dex is available. Refresh now?")) {
       window.location.reload();
     }
   }
