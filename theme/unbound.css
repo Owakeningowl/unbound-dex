@@ -1,14 +1,24 @@
 /* No top bar: the panels start at the top, the theme picker sits in the corner. */
 .pfx-panel { top: 0 !important; }
 .nav-theme.unbound-theme { position: fixed; top: 10px; right: 14px; z-index: 20; }
-.unbound-title { margin: 10px 0 2px; }
-/* the logo's own capsule edges fade into the page instead of sitting on it as a box */
+.unbound-title { margin: 14px 0 6px; }
+/* The logo sits in a soft glow taken from its own purple / night-blue, and only the outer strip of each edge
+   fades out, so the capsule melts into the page while the lettering and Hoopa stay fully crisp. */
+.unbound-title a { position: relative; display: inline-block; isolation: isolate; }
+.unbound-title a::before {
+  content: ''; position: absolute; inset: -26px -54px; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse closest-side, rgba(126, 87, 214, 0.42), rgba(54, 74, 160, 0.18) 55%, transparent 100%);
+  filter: blur(6px);
+}
 .unbound-title img {
-  width: 300px; max-width: 100%; height: auto;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+  display: block; width: 300px; max-width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
                       linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
               linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
   mask-composite: intersect;
+}
+html:not([data-theme="dark"]) .unbound-title a::before {
+  background: radial-gradient(ellipse closest-side, rgba(126, 87, 214, 0.30), rgba(80, 110, 200, 0.12) 55%, transparent 100%);
 }
